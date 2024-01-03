@@ -13,13 +13,18 @@ struct IPFTestApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                ContentView(launchScreenViewModel: launchScreenViewModel)
-
+            VStack {
                 if launchScreenViewModel.state == .active {
                     LaunchScreenView()
+                } else {
+                    SectionsListView()
                 }
             }
+            .onAppear(perform: {
+                Task {
+                    self.launchScreenViewModel.dismissLaunchScreen()
+                }
+            })
         }
     }
 }

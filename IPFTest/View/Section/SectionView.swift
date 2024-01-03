@@ -14,17 +14,17 @@ struct SectionView: View {
         ZStack {
             Image(section.imageName)
                 .resizable()
-                .scaledToFit()
                 .frame(height: 200)
                 .cornerRadius(15)
                 .opacity(0.5)
 
             Text(section.sectionType.title)
                 .font(.system(size: 24, weight: .semibold))
+                .foregroundColor(.black)
         }
     }
 }
 
 #Preview {
-    SectionView(section: SectionProvider.sections[0])
+    SectionView(section: SectionProvider.sections[2])
 }

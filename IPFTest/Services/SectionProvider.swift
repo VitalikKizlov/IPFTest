@@ -9,8 +9,8 @@ import Foundation
 
 struct SectionProvider {
     static let sections = [
-        Section(sectionType: .characters, imageName: "charactersImage"),
-        Section(sectionType: .locations, imageName: "locationsImage"),
-        Section(sectionType: .episodes, imageName: "episodesImage")
+        Section(id: UUID(), sectionType: .characters, imageName: "charactersImage"),
+        Section(id: UUID(), sectionType: .locations, imageName: "locationsImage"),
+        Section(id: UUID(), sectionType: .episodes, imageName: "episodesImage")
     ]
 }

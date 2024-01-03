@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Section {
+struct Section: Identifiable {
+    let id: UUID
     let sectionType: SectionType
     let imageName: String
 }
