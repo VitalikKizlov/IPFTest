@@ -14,6 +14,8 @@
 		FB7ABE4A2B4602DA00AAF63A /* IPFTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE492B4602DA00AAF63A /* IPFTestTests.swift */; };
 		FB7ABE542B4602DA00AAF63A /* IPFTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE532B4602DA00AAF63A /* IPFTestUITests.swift */; };
 		FB7ABE562B4602DA00AAF63A /* IPFTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE552B4602DA00AAF63A /* IPFTestUITestsLaunchTests.swift */; };
+		FB7ABE632B46053800AAF63A /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE622B46053800AAF63A /* LaunchScreenView.swift */; };
+		FB7ABE672B460A9000AAF63A /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE662B460A9000AAF63A /* LaunchScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		FB7ABE4F2B4602DA00AAF63A /* IPFTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPFTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7ABE532B4602DA00AAF63A /* IPFTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPFTestUITests.swift; sourceTree = "<group>"; };
 		FB7ABE552B4602DA00AAF63A /* IPFTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPFTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FB7ABE622B46053800AAF63A /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		FB7ABE662B460A9000AAF63A /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,7 @@
 		FB7ABE372B4602D900AAF63A /* IPFTest */ = {
 			isa = PBXGroup;
 			children = (
-				FB7ABE382B4602D900AAF63A /* IPFTestApp.swift */,
-				FB7ABE3A2B4602D900AAF63A /* ContentView.swift */,
+				FB7ABE642B460A6900AAF63A /* View */,
 				FB7ABE3C2B4602D900AAF63A /* Assets.xcassets */,
 				FB7ABE3E2B4602D900AAF63A /* Preview Content */,
 			);
@@ -125,6 +128,25 @@
 				FB7ABE552B4602DA00AAF63A /* IPFTestUITestsLaunchTests.swift */,
 			);
 			path = IPFTestUITests;
+			sourceTree = "<group>";
+		};
+		FB7ABE642B460A6900AAF63A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB7ABE652B460A7B00AAF63A /* LaunchScreen */,
+				FB7ABE382B4602D900AAF63A /* IPFTestApp.swift */,
+				FB7ABE3A2B4602D900AAF63A /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB7ABE652B460A7B00AAF63A /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FB7ABE622B46053800AAF63A /* LaunchScreenView.swift */,
+				FB7ABE662B460A9000AAF63A /* LaunchScreenViewModel.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB7ABE3B2B4602D900AAF63A /* ContentView.swift in Sources */,
+				FB7ABE672B460A9000AAF63A /* LaunchScreenViewModel.swift in Sources */,
 				FB7ABE392B4602D900AAF63A /* IPFTestApp.swift in Sources */,
+				FB7ABE632B46053800AAF63A /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
