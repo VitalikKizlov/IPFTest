@@ -16,6 +16,9 @@
 		FB7ABE562B4602DA00AAF63A /* IPFTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE552B4602DA00AAF63A /* IPFTestUITestsLaunchTests.swift */; };
 		FB7ABE632B46053800AAF63A /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE622B46053800AAF63A /* LaunchScreenView.swift */; };
 		FB7ABE672B460A9000AAF63A /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE662B460A9000AAF63A /* LaunchScreenViewModel.swift */; };
+		FB7ABE6A2B460FB500AAF63A /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE692B460FB500AAF63A /* SectionView.swift */; };
+		FB7ABE6F2B46101200AAF63A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE6E2B46101200AAF63A /* Section.swift */; };
+		FB7ABE722B4610AA00AAF63A /* SectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABE712B4610AA00AAF63A /* SectionProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		FB7ABE552B4602DA00AAF63A /* IPFTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPFTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FB7ABE622B46053800AAF63A /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		FB7ABE662B460A9000AAF63A /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
+		FB7ABE692B460FB500AAF63A /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		FB7ABE6E2B46101200AAF63A /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		FB7ABE712B4610AA00AAF63A /* SectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,8 @@
 		FB7ABE372B4602D900AAF63A /* IPFTest */ = {
 			isa = PBXGroup;
 			children = (
+				FB7ABE702B46109B00AAF63A /* Services */,
+				FB7ABE6D2B46100A00AAF63A /* Domain */,
 				FB7ABE642B460A6900AAF63A /* View */,
 				FB7ABE3C2B4602D900AAF63A /* Assets.xcassets */,
 				FB7ABE3E2B4602D900AAF63A /* Preview Content */,
@@ -133,6 +141,7 @@
 		FB7ABE642B460A6900AAF63A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FB7ABE682B460FA800AAF63A /* Section */,
 				FB7ABE652B460A7B00AAF63A /* LaunchScreen */,
 				FB7ABE382B4602D900AAF63A /* IPFTestApp.swift */,
 				FB7ABE3A2B4602D900AAF63A /* ContentView.swift */,
@@ -147,6 +156,30 @@
 				FB7ABE662B460A9000AAF63A /* LaunchScreenViewModel.swift */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		FB7ABE682B460FA800AAF63A /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				FB7ABE692B460FB500AAF63A /* SectionView.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		FB7ABE6D2B46100A00AAF63A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FB7ABE6E2B46101200AAF63A /* Section.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FB7ABE702B46109B00AAF63A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FB7ABE712B4610AA00AAF63A /* SectionProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +314,9 @@
 			files = (
 				FB7ABE3B2B4602D900AAF63A /* ContentView.swift in Sources */,
 				FB7ABE672B460A9000AAF63A /* LaunchScreenViewModel.swift in Sources */,
+				FB7ABE6A2B460FB500AAF63A /* SectionView.swift in Sources */,
+				FB7ABE722B4610AA00AAF63A /* SectionProvider.swift in Sources */,
+				FB7ABE6F2B46101200AAF63A /* Section.swift in Sources */,
 				FB7ABE392B4602D900AAF63A /* IPFTestApp.swift in Sources */,
 				FB7ABE632B46053800AAF63A /* LaunchScreenView.swift in Sources */,
 			);
