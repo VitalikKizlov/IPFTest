@@ -19,7 +19,7 @@ struct SectionsListView: View {
                     VStack(spacing: 20) {
                         ForEach(SectionProvider.sections) { section in
                             NavigationLink {
-                                SectionDetailsView()
+                                CharactersListView()
                             } label: {
                                 SectionView(section: section)
                             }
@@ -37,7 +37,7 @@ struct SectionsListView: View {
                 }
             }
         }
-        .navigationBarColor(.clear)
+        .accentColor(.green)
     }
 }
 

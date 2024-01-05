@@ -15,8 +15,8 @@ struct SectionView: View {
             Image(section.imageName)
                 .resizable()
                 .frame(height: 200)
+                .overlay(Color.primary.colorInvert().opacity(0.5), alignment: .center)
                 .cornerRadius(15)
-                .opacity(0.5)
 
             Text(section.sectionType.title)
                 .font(.system(size: 24, weight: .semibold))
