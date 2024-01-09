@@ -42,6 +42,8 @@ struct CharactersListView: View {
             .padding()
         case .loaded(let items):
             ScrollView {
+                SearchBar(text: $viewModel.searchText)
+
                 LazyVGrid(columns: gridItemLayout) {
                     ForEach(items, id: \.id) { character in
                         NavigationLink {

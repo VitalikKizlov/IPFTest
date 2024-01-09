@@ -10,6 +10,7 @@ import Foundation
 enum CharactersEndpoint {
     case characters
     case filterCharacters(SelectedOptions)
+    case search(String)
 }
 
 extension CharactersEndpoint: RequestProviding {
@@ -23,7 +24,7 @@ extension CharactersEndpoint: RequestProviding {
 
     var path: String {
         switch self {
-        case .characters, .filterCharacters:
+        case .characters, .filterCharacters, .search:
             return "/api/character"
         }
     }
@@ -52,6 +53,10 @@ extension CharactersEndpoint: RequestProviding {
             }
 
             return queryItems
+        case .search(let searchText):
+            return [
+                URLQueryItem(name: "name", value: searchText)
+            ]
         }
     }
 
