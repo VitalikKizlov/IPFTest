@@ -33,7 +33,7 @@ struct CharactersListView: View {
     var contentView: some View {
         switch viewModel.state {
         case .idle:
-            EmptyView()
+            EmptyResponseView()
         case .loading:
             VStack(spacing: 6) {
                 Text("Loading")
@@ -41,21 +41,25 @@ struct CharactersListView: View {
             }
             .padding()
         case .loaded(let items):
-            ScrollView {
-                SearchBar(text: $viewModel.searchText)
-
-                LazyVGrid(columns: gridItemLayout) {
-                    ForEach(items, id: \.id) { character in
-                        NavigationLink {
-                            CharacterDetailsView(character: character)
-                        } label: {
-                            CharacterView(character: character)
-                                .cornerRadius(15)
+            if items.isEmpty {
+                EmptyResponseView()
+            } else {
+                ScrollView {
+                    SearchBar(text: $viewModel.searchText)
+                    
+                    LazyVGrid(columns: gridItemLayout) {
+                        ForEach(items, id: \.id) { character in
+                            NavigationLink {
+                                CharacterDetailsView(character: character)
+                            } label: {
+                                CharacterView(character: character)
+                                    .cornerRadius(15)
+                            }
                         }
                     }
                 }
+                .padding()
             }
-            .padding()
         case .error:
             VStack(spacing: 6) {
                 Text("Error")
