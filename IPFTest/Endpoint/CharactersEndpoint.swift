@@ -9,6 +9,7 @@ import Foundation
 
 enum CharactersEndpoint {
     case characters
+    case filterCharacters(SelectedOptions)
 }
 
 extension CharactersEndpoint: RequestProviding {
@@ -22,7 +23,7 @@ extension CharactersEndpoint: RequestProviding {
 
     var path: String {
         switch self {
-        case .characters:
+        case .characters, .filterCharacters:
             return "/api/character"
         }
     }
@@ -35,13 +36,22 @@ extension CharactersEndpoint: RequestProviding {
         switch self {
         case .characters:
             return []
-//            return [
-//                URLQueryItem(name: "lat", value: String(describing: coordinates.latitude)),
-//                URLQueryItem(name: "lon", value: String(describing: coordinates.longitude)),
-//                URLQueryItem(name: "stoptypes", value: "NaptanPublicBusCoachTram"),
-//                URLQueryItem(name: "radius", value: "500"),
-//                URLQueryItem(name: "app_key", value: Constants.transportForLondonKey)
-//        ]
+        case .filterCharacters(let options):
+            let statusOption = options.statusOption
+            let genderOption = options.genderOption
+            var queryItems: [URLQueryItem] = []
+
+            if let status = statusOption {
+                let item = URLQueryItem(name: "status", value: status.title.lowercased())
+                queryItems.append(item)
+            }
+
+            if let gender = genderOption {
+                let item = URLQueryItem(name: "gender", value: gender.title.lowercased())
+                queryItems.append(item)
+            }
+
+            return queryItems
         }
     }
 

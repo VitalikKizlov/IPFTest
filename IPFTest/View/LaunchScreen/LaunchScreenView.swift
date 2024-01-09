@@ -10,8 +10,7 @@ import SwiftUI
 struct LaunchScreenView: View {
     var body: some View {
         ZStack {
-            Color(.black)
-                .opacity(0.8)
+            Color(.primaryBlack)
             
             VStack(spacing: 100) {
                 Image("rickAndMorty")

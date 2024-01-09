@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct CharactersListView: View {
-    
-    @StateObject private var viewModel = CharactersListViewModel()
+    @StateObject private var viewModel = CharactersListViewModel(CharactersService())
+    @StateObject private var filtersViewModel = FiltersViewModel()
     private var gridItemLayout = Array(repeating: GridItem(.flexible()), count: 2)
+    @State private var showFilters = false
 
     var body: some View {
         ZStack {
-            Color(.black)
-                .opacity(0.8)
+            Color(.primaryBlack)
                 .ignoresSafeArea()
 
             contentView
@@ -24,7 +24,7 @@ struct CharactersListView: View {
                     ToolbarItem(placement: .principal) {
                             Text("Characters")
                             .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.green)
+                            .foregroundColor(.primaryGreen)
                     }
                 }
         }
@@ -73,9 +73,13 @@ struct CharactersListView: View {
         Button {
             print("Filter")
         } label: {
-            NavigationLink {
-                FiltersView()
-            } label: {
+            NavigationLink(destination: FiltersView(viewModel: filtersViewModel) {
+                Task {
+                    let options = filtersViewModel.selectedOptions()
+                    await self.viewModel.applyFilters(options)
+                    self.filtersViewModel.resetAllOptions()
+                }
+            }, isActive: $showFilters) {
                 Image("icons8-filter-50")
             }
         }

@@ -13,8 +13,7 @@ struct CharacterDetailsView: View {
 
     var body: some View {
         ZStack {
-            Color(.black)
-                .opacity(0.8)
+            Color(.primaryBlack)
                 .ignoresSafeArea()
 
             VStack(alignment: .leading, spacing: 20) {
@@ -33,7 +32,7 @@ struct CharacterDetailsView: View {
             ToolbarItem(placement: .principal) {
                 Text(character.name)
                     .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.green)
+                    .foregroundColor(.primaryGreen)
             }
         }
     }
@@ -46,26 +45,26 @@ struct CharacterInformationView: View {
         VStack(alignment: .leading) {
             HStack(spacing: 12) {
                 Text("Name:")
-                    .foregroundColor(.green)
+                    .foregroundColor(.primaryGreen)
                 Text(character.name)
                     .foregroundColor(.white)
             }
             HStack(spacing: 12) {
                 Text("Status:")
-                    .foregroundColor(.green)
-                Text(character.status)
+                    .foregroundColor(.primaryGreen)
+                Text(character.status.rawValue)
                     .foregroundColor(.white)
             }
             HStack(spacing: 12) {
                 Text("Species:")
-                    .foregroundColor(.green)
+                    .foregroundColor(.primaryGreen)
                 Text(character.species)
                     .foregroundColor(.white)
             }
             HStack(spacing: 12) {
                 Text("Gender:")
-                    .foregroundColor(.green)
-                Text(character.gender)
+                    .foregroundColor(.primaryGreen)
+                Text(character.gender.rawValue)
                     .foregroundColor(.white)
             }
         }

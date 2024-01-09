@@ -9,6 +9,7 @@ import Foundation
 
 protocol CharactersServiceProtocol {
     func getCharactersList() async throws -> CharactersListResponse
+    func filterCharacters(_ options: SelectedOptions) async throws -> CharactersListResponse
 }
 
 struct CharactersService: CharactersServiceProtocol {
@@ -20,6 +21,11 @@ struct CharactersService: CharactersServiceProtocol {
 
     func getCharactersList() async throws -> CharactersListResponse {
         let endpoint = CharactersEndpoint.characters
+        return try await session.execute(endpoint)
+    }
+
+    func filterCharacters(_ options: SelectedOptions) async throws -> CharactersListResponse {
+        let endpoint = CharactersEndpoint.filterCharacters(options)
         return try await session.execute(endpoint)
     }
 }

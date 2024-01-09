@@ -16,14 +16,34 @@ final class CharactersListViewModel: ObservableObject {
     }
 
     @Published private(set) var state: ViewState = .idle
+    private var charactersHasBeenLoaded = false
 
-    private let charactersService = CharactersService()
+    private let charactersService: CharactersServiceProtocol
 
-    @MainActor func getCharactersList() async {
+    // MARK: - Init
+
+    init(_ charactersService: CharactersServiceProtocol) {
+        self.charactersService = charactersService
+    }
+
+    @MainActor
+    func getCharactersList() async {
+        guard !charactersHasBeenLoaded else { return }
         state = .loading
         do {
             let listInfo = try await charactersService.getCharactersList()
-            print(listInfo.results.count)
+            self.charactersHasBeenLoaded = true
+            self.state = .loaded(listInfo.results)
+        } catch {
+            self.state = .error
+        }
+    }
+    
+    @MainActor
+    func applyFilters(_ options: SelectedOptions) async {
+        state = .loading
+        do {
+            let listInfo = try await charactersService.filterCharacters(options)
             self.state = .loaded(listInfo.results)
         } catch {
             self.state = .error
