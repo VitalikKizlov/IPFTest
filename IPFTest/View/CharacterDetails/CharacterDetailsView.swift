@@ -28,13 +28,7 @@ struct CharacterDetailsView: View {
             }
             .padding()
         }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text(character.name)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.primaryGreen)
-            }
-        }
+        .customToolbar(title: character.name)
     }
 }
 

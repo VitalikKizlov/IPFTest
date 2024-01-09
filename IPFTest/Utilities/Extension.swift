@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UINavigationController {
     open override func viewWillLayoutSubviews() {
@@ -21,5 +22,11 @@ extension Array {
             try transform(&el)
             return el
         }
+    }
+}
+
+extension View {
+    func customToolbar(title: String) -> some View {
+        return self.modifier(CustomToolBarModifier(title: title))
     }
 }

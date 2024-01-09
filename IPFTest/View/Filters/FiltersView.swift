@@ -53,13 +53,7 @@ struct FiltersView: View {
                     }
                     .padding()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                            Text("Filter")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.primaryGreen)
-                    }
-                }
+                .customToolbar(title: "Filter")
             }
         }
 }

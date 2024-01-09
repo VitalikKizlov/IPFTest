@@ -20,13 +20,7 @@ struct CharactersListView: View {
 
             contentView
                 .navigationBarItems(trailing: filtersButton)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                            Text("Characters")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.primaryGreen)
-                    }
-                }
+                .customToolbar(title: "Characters")
         }
         .onAppear {
             Task {

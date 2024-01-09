@@ -34,13 +34,7 @@ struct SectionsListView: View {
                     .padding()
                 }
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                            Text("Choose section")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.primaryGreen)
-                    }
-                }
+                .customToolbar(title: "Choose section")
             }
         }
         .accentColor(.primaryGreen)
